@@ -1,0 +1,7 @@
+post_recipe_form:
+  path: '/post-recipe'
+  defaults:
+    _form: '\Drupal\post_recipe\Form\post_recipe'
+    _title: 'Post recipe' 
+  requirements:  
+    _permission: 'access content'

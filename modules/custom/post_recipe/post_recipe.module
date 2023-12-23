@@ -1,0 +1,39 @@
+<?php
+
+// function post_recipe_menu() {
+//   $items = array();
+
+//   $items['/post_recipe'] = array( //this creates a URL that will call this form at "examples/form-example"
+//     'title' => 'Example Form', //page title
+//     'description' => 'A form to mess around with.',
+//     'page callback' => 'post_recipe_form', //this is the function that will be called when the page is accessed.  for a form, use drupal_get_form
+//     'page arguments' => array('post_recipe_form'), //put the name of the form here
+//     'access callback' => TRUE
+//   );
+
+//   return $items;
+// }
+
+// function post_recipe_form($form, &$form_state) {
+  
+//  $form['price'] = array(
+//     '#type' => 'textfield', //you can find a list of available types in the form api
+//     '#title' => 'What is Your Price?',
+//     '#size' => 10,
+//     '#maxlength' => 10,
+//     '#required' => TRUE, //make this field required 
+//   );
+
+//   $form['submit_button'] = array(
+//     '#type' => 'submit',
+//     '#value' => t('Click Here!'),
+//   );
+  
+//   return $form;
+// }
+
+// function post_recipe_form_validate($form, &$form_state) {
+// }
+
+// function post_recipe_form_submit($form, &$form_state) {
+// }

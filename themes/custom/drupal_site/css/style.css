@@ -1,0 +1,133 @@
+.region.region-nav-main {
+    float: right;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+footer .navbar-nav {
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+div#block-footertitle {
+    display: flex;
+    justify-content: space-around;
+}
+div#block-footermessage {
+    display: flex;
+    justify-content: space-around;
+}
+div#block-copyright {
+    display: flex;
+    justify-content: space-around;
+}
+footer{
+    border-top: 1px solid #f5f5f5;
+    background: #f3f3f3;
+}
+header {
+    border-bottom: 1px solid #f5f5f5;
+    background: #f3f3f3;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    /* margin-bottom: 30px; */
+}
+div#sidebarFirst {
+    border-right: 1px solid #f5f5f5;
+    margin-top: 80px;
+}
+#block-views-block-food-filters-block-1 .view-content {
+     /* display: flex;
+    align-items: center;
+    margin-bottom: 50px; */
+        column-count: 2;
+}
+#block-views-block-food-filters-block-1 .views-row img {
+    width: 200px;
+    height: 150px;
+    margin-bottom:30px
+}
+.field--name-field-french-recipe,.field--name-field-india-image,.field--name-field-thai-image {
+    margin-bottom: 50px;
+    display:flex;
+    justify-content: space-around;
+}
+div#main {
+    margin-bottom: 50px;
+    margin-top: 150px;
+    padding-left: 20px;
+}
+footer.node__meta {
+    display: none;
+}
+nav#block-leftnavigation {
+    margin-top: 30px;
+}
+
+.field--name-field-french-title,.field--name-field-india-title,.field--name-field-thai-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#block-views-block-food-filters-block-1 .view-content img {
+    margin-right: 80px;
+}
+nav#block-drupal-site-main-menu li {
+    margin-right: 15px;
+}
+
+
+.region-nav-main li:hover a , #block-drupal-site-footer li:hover a {
+    border-bottom: 2px solid rgb(223, 2, 2);
+    color: rgb(194, 3, 3);
+    font-weight: 500;
+}
+.region-nav-main li a{
+    color: rgb(135 99 99);
+    font-size: 16px;
+    font-weight: 300;
+}
+
+#block-leftnavigation li a:hover  {
+    border-left: 2px solid rgb(223, 2, 2);
+    color: rgb(194, 3, 3);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+#block-leftnavigation li a {
+    color: rgb(135 99 99);
+    margin-bottom: 10px;
+    font-weight: 300;
+    padding: 5px;
+}
+#block-drupal-site-footer li a{
+    color: rgb(135 99 99);
+    margin-bottom: 10px;
+    font-weight: 300;
+    padding: 5px;
+    }
+#block-leftnavigation li.nav-item.active a {
+    border-left: 3px solid rgb(223, 2, 2);
+    color: rgb(194, 3, 3);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+#block-leftnavigation span.nav-link {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+#navbarSupportedContent li.nav-item.active a{
+    border-bottom: 3px solid rgb(223, 2, 2);
+    color: rgb(194, 3, 3);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+#block-copyright p {
+    font-family: cursive;
+    font-weight: 500;
+    font-size: 16px;
+    color: #9b0000;
+}

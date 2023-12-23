@@ -1,0 +1,4 @@
+post_recipe.menu_link:
+  title: 'Post Recipe'
+  menu_name: main
+  route_name: post_recipe_form
