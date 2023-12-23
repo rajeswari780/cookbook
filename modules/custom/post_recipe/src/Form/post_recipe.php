@@ -10,6 +10,7 @@ use Drupal\post_recipe\paraCreation;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\Core\url;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use \Drupal\Core\Messenger\MessengerInterface;
 
 class post_recipe extends FormBase{
 
@@ -141,6 +142,8 @@ class post_recipe extends FormBase{
 
         $url = Url::fromRoute('entity.node.canonical', ['node' => $nodecreate]);
         $form_state->setRedirectUrl($url);
+
+        \Drupal::messenger()->addMessage(t($title.' recipe is posted successfully. Thank you for your Contribution.'));
 
     }
 }

@@ -23,6 +23,7 @@
         "drupal/core-project-message": "^9.5",
         "drupal/core-recommended": "^9.5",
         "drupal/core-vendor-hardening": "^9.5",
+        "drupal/fontawesome_block_icons": "^1.0",
         "drupal/paragraphs": "^1.16",
         "drupal/restui": "^1.21"
     },

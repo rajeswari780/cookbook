@@ -131,3 +131,29 @@ nav#block-drupal-site-main-menu li {
     font-size: 16px;
     color: #9b0000;
 }
+div#block-drupal-site-search {
+    width: 450px;
+}
+input#edit-keys {
+    width: 300px;
+}
+.field--name-field-article-slogan{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    margin-left: 180px;
+}
+.field--name-field-article-slogan p{
+    font-size: 24px;
+    font-weight: 700;
+}
+.field--name-field-image{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+div#block-footericons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
