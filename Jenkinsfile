@@ -1,15 +1,20 @@
-pipeline{
-    agent any
-    environment{
-        staging_server="35.231.56.15"
-        remote_server = "C:/Users/admin/.jenkins/workspace/drupal_project/*"
-    }
 
-    stages{
-        stage('Deploy to remote'){
-            steps{
-                sh 'scp -r ${remote_server}/* root@${staging_server}:/var/www/html/drupal/'
-            }
-        }
-    }
-}
+  echo "Switching to project docroot."
+  cd /var/www/html/drupal/
+  echo ""
+  echo "Pulling down the latest code."
+  git pull origin main
+  echo ""
+  echo "Clearing drush caches."
+  drush cr
+  echo ""
+  echo "Running database updates."
+  drush updb -y
+  echo ""
+  echo "Importing configuration."
+  drush config:import -y
+  echo ""
+  echo "Clearing caches."
+  drush cr
+  echo ""
+  echo "Deployment complete."
