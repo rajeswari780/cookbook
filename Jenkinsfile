@@ -1,15 +1,18 @@
 pipeline {
     agent any
+    
     stages {
-        // stage('Checkout') {
-        //     steps {
-        //         git 'https://github.com/rajeswari780/cookbook.git'
-        //     }
-        // }
-        stage('Deploy') {
+        stage('Deploy Drupal') {
             steps {
-                sh 'wget -r -np -nH --cut-dirs=1 http://35.231.56.15/var/www/html/drupal/'
-                sh 'cp -r https://github.com/rajeswari780/cookbook.git/* /var/www/html/drupal/'
+                script {
+                    // Set your instance IP address and other variables
+                    def instanceIP = '35.231.56.15'
+                    def sourceDir = 'C:/Users/admin/.jenkins/workspace/drupal_project/'
+                    def destinationDir = '/var/www/html/drupal'
+                    
+                    // Copy Drupal code to the compute instance over HTTP
+                    sh "curl -X POST -F 'file=@${sourceDir}/.' http://${instanceIP}/upload.php"
+                }
             }
         }
     }
