@@ -1,5 +1,5 @@
-name: Post recipe
-description: Post your recipe here
+name: Post recipe 
+description: Post your recipe details here 
 type: module
 package: custom
 core_version_requirement: ^9 || ^10
