@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         PROJECT_ID = 'networking-test-project-415703'
-        INSTANCE_NAME = 'dev-instance'
+        INSTANCE_NAME = '35.231.56.15'
         ZONE = 'us-east1-b'
         GIT_REPO = 'https://github.com/rajeswari780/cookbook.git'
         DRUPAL_DIR = '/var/www/html/drupal/'
@@ -24,7 +24,7 @@ pipeline {
 
         stage('Restart Apache') {
             steps {
-                sh "ssh user@${INSTANCE_NAME} sudo service nginx restart"
+                sh "ssh rajimurugan1002@${INSTANCE_NAME} sudo service nginx restart"
             }
         }
     }
