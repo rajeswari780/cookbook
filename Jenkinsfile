@@ -11,7 +11,7 @@ pipeline {
                     def destinationDir = '/var/www/html/drupal'
                     
                     // Copy Drupal code to the compute instance over HTTP
-                    sh "curl -X POST -F 'file=@${sourceDir}/.' http://${instanceIP}/upload.php"
+                    sh "curl -X POST -F 'file=@${sourceDir}/.' http://${instanceIP}"
                 }
             }
         }
