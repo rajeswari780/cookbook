@@ -1,30 +1,37 @@
 pipeline {
     agent any
+    
+    environment {
+        PROJECT_ID = 'networking-test-project-415703'
+        INSTANCE_NAME = 'dev-instance'
+        ZONE = 'us-east1-b'
+        GIT_REPO = 'https://github.com/rajeswari780/cookbook.git'
+        DRUPAL_DIR = '/var/www/html/drupal/'
+    }
 
     stages {
-        stage('Copy to Remote Server') {
+        stage('Clone Repository') {
             steps {
-                script {
-                    // Define remote server details
-                    def remoteServer = [
-                        host: '35.231.56.15',
-                        user: 'root',
-                    ]
-
-                    // Directory on the remote server where you want to copy the workspace
-                    def remoteDir = '/var/www/html/drupal/'
-
-                    // Directory in Jenkins workspace to copy
-                    def localDir = 'C:/Users/admin/.jenkins/workspace/drupal_project/'
-
-                    // Execute SCP command to copy files
-                    sh "scp -r ${localDir} ${remoteServer.user}@${remoteServer.host}:${remoteDir}"
-
-                    // If NGINX server is installed, you might want to restart it
-                    // Example:
-                    // sh "sshpass -p '${remoteServer.password}' ssh ${remoteServer.user}@${remoteServer.host} sudo service nginx restart"
-                }
+                git branch: 'main', url: GIT_REPO
             }
+        }
+
+        stage('Deploy Code') {
+            steps {
+                sh "scp -r ${DRUPAL_DIR} user@${INSTANCE_NAME}:${DRUPAL_DIR}"
+            }
+        }
+
+        stage('Restart Apache') {
+            steps {
+                sh "ssh user@${INSTANCE_NAME} sudo service nginx restart"
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Deployment completed'
         }
     }
 }
