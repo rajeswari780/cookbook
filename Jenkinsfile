@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Fetch Code') {
-            steps {
-                // Fetch the code from your Git repository
-                git branch: 'main', url: 'https://github.com/rajeswari780/cookbook.git'
-            }
-        }
+        // stage('Fetch Code') {
+        //     steps {
+        //         // Fetch the code from your Git repository
+        //         git branch: 'main', url: 'https://github.com/rajeswari780/cookbook.git'
+        //     }
+        // }
         stage('Deploy Changes') {
             steps {
                 // Copy the updated files to the GCP compute engine instance using rsync
