@@ -15,7 +15,7 @@ pipeline {
                     def remoteDir = '/var/www/html/drupal/'
 
                     // Directory in Jenkins workspace to copy
-                    def localDir = 'drupal_project'
+                    def localDir = 'C:/Users/admin/.jenkins/workspace/drupal_project/'
 
                     // Execute SCP command to copy files
                     sh "scp -r ${localDir} ${remoteServer.user}@${remoteServer.host}:${remoteDir}"
