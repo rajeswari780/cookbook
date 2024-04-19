@@ -18,7 +18,7 @@ pipeline {
 
         stage('Deploy Code') {
             steps {
-                sh "scp -r ${DRUPAL_DIR} user@${INSTANCE_NAME}:${DRUPAL_DIR}"
+                sh "scp -r ${DRUPAL_DIR} rajimurugan1002@${INSTANCE_NAME}:${DRUPAL_DIR}"
             }
         }
 
