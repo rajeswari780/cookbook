@@ -5,7 +5,7 @@ pipeline {
         stage('Fetch Code') {
             steps {
                 // Fetch the code from your Git repository
-                git 'https://github.com/rajeswari780/cookbook.git'
+                git branch: 'main', url: 'https://github.com/rajeswari780/cookbook.git'
             }
         }
         stage('Deploy Changes') {
