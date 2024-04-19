@@ -1,37 +1,16 @@
 pipeline {
     agent any
-    
-    environment {
-        PROJECT_ID = 'networking-test-project-415703'
-        INSTANCE_NAME = '35.231.56.15'
-        ZONE = 'us-east1-b'
-        GIT_REPO = 'https://github.com/rajeswari780/cookbook.git'
-        DRUPAL_DIR = '/var/www/html/drupal/'
-    }
-
     stages {
-        stage('Clone Repository') {
+        stage('Checkout') {
             steps {
-                git branch: 'main', url: GIT_REPO
+                git 'https://github.com/rajeswari780/cookbook.git'
             }
         }
-
-        stage('Deploy Code') {
+        stage('Deploy') {
             steps {
-                sh "scp -r ${DRUPAL_DIR} rajimurugan1002@${INSTANCE_NAME}:${DRUPAL_DIR}"
+                sh 'wget -r -np -nH --cut-dirs=1 http://35.231.56.15/var/www/html/drupal/'
+                sh 'cp -r https://github.com/rajeswari780/cookbook.git/* /var/www/html/drupal/'
             }
-        }
-
-        stage('Restart Apache') {
-            steps {
-                sh "ssh rajimurugan1002@${INSTANCE_NAME} sudo service nginx restart"
-            }
-        }
-    }
-
-    post {
-        always {
-            echo 'Deployment completed'
         }
     }
 }
