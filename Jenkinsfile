@@ -11,7 +11,7 @@ pipeline {
         stage('Deploy Changes') {
             steps {
                 // Copy the updated files to the GCP compute engine instance using rsync
-                sh 'rsync -avz --delete --exclude=.git ./ rajimurugan1002@35.231.56.15:/var/www/html/'
+                sh 'scp -r C:/Users/admin/.jenkins/workspace/drupal_project/ rajimurugan1002@35.231.56.15:/var/www/html/'
             }
         }
     }
